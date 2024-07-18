@@ -1,0 +1,46 @@
+package com.example.inventory_service.controller;
+
+import com.example.inventory_service.dto.InventoryResponse;
+import com.example.inventory_service.service.InventoryService;
+import lombok.RequiredArgsConstructor;
+<<<<<<< HEAD
+import lombok.extern.slf4j.Slf4j;
+=======
+>>>>>>> bc6b13f56212b6764d14151a9f6500d3e01ffe71
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/inventory")
+@RequiredArgsConstructor
+<<<<<<< HEAD
+@Slf4j
+=======
+>>>>>>> bc6b13f56212b6764d14151a9f6500d3e01ffe71
+public class InventoryController {
+
+    private final InventoryService inventoryService;
+
+    // http://localhost:8082/api/inventory/iphone-13,iphone13-red
+
+    // http://localhost:8082/api/inventory?skuCode=iphone-13&skuCode=iphone13-red
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<InventoryResponse> isInStock(@RequestParam List<String> skuCode) {
+<<<<<<< HEAD
+        // testing the time out usecase for circuit breaker Resilience4J
+        log.info("wait started");
+//        try {
+//            Thread.sleep(10000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+        log.info("Ended");
+
+=======
+>>>>>>> bc6b13f56212b6764d14151a9f6500d3e01ffe71
+        return inventoryService.isInStock(skuCode);
+    }
+}
